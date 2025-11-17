@@ -8,6 +8,9 @@ import goalRoutes from "./routes/goalRoutes.js";
 import transactionRoutes from "./routes/transactionRoutes.js";
 import billRoutes from "./routes/billRoutes.js";
 import accountRoutes from "./routes/accountRoutes.js";
+import investmentRoutes from "./routes/investmentRoutes.js";
+import aiRoutes from "./routes/aiRoutes.js";
+import aiFinanceRoutes from "./routes/aiFinanceRoutes.js";
 dotenv.config();
 
 const app = express();
@@ -19,6 +22,9 @@ app.use("/api/goals", goalRoutes);
 app.use("/api/transactions", transactionRoutes);
 app.use("/api/bills", billRoutes);
 app.use("/api/accounts", accountRoutes);
+app.use("/api/investments", investmentRoutes);
+app.use("/api/ai", aiRoutes);
+app.use("/api/ai/finance", aiFinanceRoutes);
 // MySQL connection
 const db = mysql.createConnection({
   host: process.env.DB_HOST,
